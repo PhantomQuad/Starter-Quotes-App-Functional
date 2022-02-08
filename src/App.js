@@ -19,9 +19,10 @@ function App() {
   const updateAuthors = (response) => {
     const authorlist = response.results.map((author) => ({
       name: author.name,
-      count: author.quotecount,
+      count: author.quoteCount,
     }));
     cAuthors(authorlist);
+    console.log(authorlist);
   };
 
   const updateQuote = (jsonResponse) => {
@@ -86,7 +87,7 @@ function App() {
       return (
         <tr key={index}>
           <td>{author.name}</td>
-          <td>{author.quotecount}</td>
+          <td>{author.count}</td>
         </tr>
       );
     });
